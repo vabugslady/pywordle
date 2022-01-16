@@ -3,8 +3,11 @@ Python command line version of the Wordle game so the fun can continue offline e
 
 # Getting Started
 
+## Install dependencies
+
 ```pip3 install english-words```
 
+## Launch game
 ```python3 pwordle.py```
 
 
