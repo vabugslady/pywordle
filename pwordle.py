@@ -15,6 +15,8 @@ class PyWordle():
         self.letter_freq = dict()
         # list of incorrect guesses made
         self.incorrect_choices = list()
+        # list of correct guesses made
+        self.correct_choices = list()
         # frequency of letters guessed in their correct sequence
         self.correct_guess_letter_freq = dict()
 
@@ -61,8 +63,9 @@ class PyWordle():
                 return False
 
             numPlays = numPlays + 1
-            print("\nIncorrect choices:{}".format(self.incorrect_choices))
-            print("\nRemaining choices:{}".format(self.remaining_choices))
+            print("\nIncorrect letter choices: {}".format(self.incorrect_choices))
+            print("Correct letter choices: {}".format(self.correct_choices))
+            print("Remaining letter choices: {}".format(self.remaining_choices))
             print("")
             print("\nNum guesses remaining: {}".format(self.totalPlays - numPlays))
             
@@ -98,10 +101,20 @@ class PyWordle():
         
         for i in guess:
             if i in self.worldle_word and self.worldle_word[index] == i:
+
+                # append letter to correct choices list
+                if i not in self.correct_choices:
+                    self.correct_choices.append(i)
+
                 sys.stdout.write("*|")
                 self.correct_guess_letter_freq[i] = self.correct_guess_letter_freq[i] + 1
                 numCorrect = numCorrect + 1
+
             elif i in self.worldle_word and self.letter_freq[i] != self.correct_guess_letter_freq[i]:
+                # append letter to correct choices list
+                if i not in self.correct_choices:
+                    self.correct_choices.append(i)
+
                 sys.stdout.write("?|")
             else:
                 if i not in self.incorrect_choices:
