@@ -10,5 +10,7 @@ Python command line version of the Wordle game so the fun can continue offline e
 ## Launch game
 ```python3 pwordle.py```
 
+## Example Gameplay
+![alt text](https://github.com/vabugslady/pywordle/blob/main/pwordle.png?raw=true)
 
 
