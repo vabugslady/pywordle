@@ -55,7 +55,7 @@ class PyWordle():
         numPlays = 0
 
         while True:
-            if numPlays <= self.totalPlays and self.playTurn():
+            if numPlays < self.totalPlays and self.playTurn():
                 print("\nCongratulations You Win!")
                 return True
             elif numPlays == self.totalPlays:
