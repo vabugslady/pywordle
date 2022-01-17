@@ -1,5 +1,5 @@
 # pywordle
-Python command line version of the Wordle game so the fun can continue offline while you wait to play the official version.
+A python-based command line version of the popular Wordle game so the fun can continue offline while you wait to play the official version.
 
 # Getting Started
 
