@@ -11,6 +11,6 @@ A python-based command line version of the popular Wordle game so the fun can co
 ```python pwordle.py```
 
 ## Example Gameplay
-![alt text](https://github.com/vabugslady/pywordle/blob/main/pwordle.png?raw=true)
+![alt text](https://github.com/vabugslady/pywordle/blob/main/images/pwordle.png?raw=true)
 
 
