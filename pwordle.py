@@ -18,7 +18,7 @@ class PyWordle():
         # list of correct guesses made
         self.correct_choices = list()
         # frequency of letters guessed in their correct sequence
-        self.correct_guess_letter_freq = dict()
+        #self.correct_guess_letter_freq = dict()
 
         # length of words to filter for game (Update to increase or decrease challenge)
         self.word_guess_length = 5
@@ -43,8 +43,8 @@ class PyWordle():
         for f in self.worldle_word:
             self.letter_freq[f] = self.letter_freq[f] + 1
 
-        for f in self.worldle_word:
-            self.correct_guess_letter_freq[f] = 0
+        #for f in self.worldle_word:
+         #   self.correct_guess_letter_freq[f] = 0
 
         self.printGameLegend()
 
@@ -98,19 +98,24 @@ class PyWordle():
         sys.stdout.write("|")
         index = 0
         numCorrect = 0
+        correct_guess_letter_freq = dict()
+
+        # initialize the letter guess
+        for f in self.worldle_word:
+            correct_guess_letter_freq[f] = 0
         
         for i in guess:
             if i in self.worldle_word and self.worldle_word[index] == i:
-
                 # append letter to correct choices list
                 if i not in self.correct_choices:
                     self.correct_choices.append(i)
 
                 sys.stdout.write("*|")
-                self.correct_guess_letter_freq[i] = self.correct_guess_letter_freq[i] + 1
+                #self.correct_guess_letter_freq[i] = self.correct_guess_letter_freq[i] + 1
+                correct_guess_letter_freq[i] = correct_guess_letter_freq[i] + 1
                 numCorrect = numCorrect + 1
 
-            elif i in self.worldle_word and self.letter_freq[i] != self.correct_guess_letter_freq[i]:
+            elif i in self.worldle_word and self.letter_freq[i] != correct_guess_letter_freq[i]:
                 # append letter to correct choices list
                 if i not in self.correct_choices:
                     self.correct_choices.append(i)
